@@ -15,3 +15,17 @@ test fail-parenthesized-from-clause {
 }
 expect error {
 }
+
+# Scalar subquery in VALUES clause is not supported
+test fail-scalar-subquery-in-values {
+    VALUES ((SELECT 1));
+}
+expect error {
+}
+
+# EXISTS subquery in VALUES clause is not supported
+test fail-exists-subquery-in-values {
+    VALUES (EXISTS(SELECT 1));
+}
+expect error {
+}
