@@ -348,7 +348,7 @@ pub fn init_loop(
                         if let Some(table_cursor_id) = table_cursor_id {
                             program.emit_insn(Insn::OpenRead {
                                 cursor_id: table_cursor_id,
-                                root_page: table.table.get_root_page(),
+                                root_page: table.table.get_root_page()?,
                                 db: table.database_id,
                             });
                         }
@@ -360,7 +360,7 @@ pub fn init_loop(
 
                         program.emit_insn(Insn::OpenWrite {
                             cursor_id: table_cursor_id,
-                            root_page: table.table.get_root_page().into(),
+                            root_page: table.table.get_root_page()?.into(),
                             db: table.database_id,
                         });
 
@@ -388,7 +388,9 @@ pub fn init_loop(
                         }
                     }
                     _ => {
-                        unimplemented!()
+                        return Err(crate::LimboError::InternalError(
+                            "INSERT mode is not supported for Search operations".to_string(),
+                        ));
                     }
                 }
 
@@ -416,7 +418,10 @@ pub fn init_loop(
                                 });
                             }
                             _ => {
-                                unimplemented!()
+                                return Err(crate::LimboError::InternalError(
+                                    "INSERT mode is not supported for indexed Search operations"
+                                        .to_string(),
+                                ));
                             }
                         }
                     }
@@ -427,7 +432,7 @@ pub fn init_loop(
                     if let Some(table_cursor_id) = table_cursor_id {
                         program.emit_insn(Insn::OpenRead {
                             cursor_id: table_cursor_id,
-                            root_page: table.table.get_root_page(),
+                            root_page: table.table.get_root_page()?,
                             db: table.database_id,
                         });
                     }

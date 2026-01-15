@@ -4840,7 +4840,9 @@ pub fn expr_vector_size(expr: &Expr) -> Result<usize> {
             1
         }
         Expr::DoublyQualified(..) => 1,
-        Expr::Exists(_) => todo!(),
+        Expr::Exists(_) => {
+            crate::bail_parse_error!("EXISTS subquery is not supported in this context")
+        }
         Expr::FunctionCall { name, args, .. } => {
             for (pos, arg) in args.iter().enumerate() {
                 let evs_arg = expr_vector_size(arg)?;
@@ -4912,7 +4914,9 @@ pub fn expr_vector_size(expr: &Expr) -> Result<usize> {
         Expr::Parenthesized(exprs) => exprs.len(),
         Expr::Qualified(..) => 1,
         Expr::Raise(..) => crate::bail_parse_error!("RAISE is not supported"),
-        Expr::Subquery(_) => todo!(),
+        Expr::Subquery(_) => {
+            crate::bail_parse_error!("Scalar subquery is not supported in this context")
+        }
         Expr::Unary(unary_operator, expr) => {
             let evs_expr = expr_vector_size(expr)?;
             if evs_expr != 1 {
