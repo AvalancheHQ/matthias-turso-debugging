@@ -68,6 +68,8 @@ jobs:
 
       - name: Run benchmarks (excluding TPC-H)
         uses: CodSpeedHQ/action@v4.7.0
+        env:
+          CODSPEED_LOG: trace
         with:
           mode: walltime
           run: cargo codspeed run
