@@ -795,8 +795,7 @@ dependencies = [
 [[package]]
 name = "codspeed"
 version = "4.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5f0d98d97fd75ca4489a1a0997820a6521531085e7c8a98941bd0e1264d567dd"
+source = "git+https://github.com/CodSpeedHQ/codspeed-rust?branch=cod-2039-issue-with-instrument-hooks-failing-in-codspeed-benchmark#452432db289c71e178b584be91090ae8fa769610"
 dependencies = [
  "anyhow",
  "cc",
@@ -813,8 +812,7 @@ dependencies = [
 [[package]]
 name = "codspeed-criterion-compat"
 version = "4.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d16fe2db207123f7b3a3b5cfff0c22f99469f7534145f3573f57f4c8a5653c2c"
+source = "git+https://github.com/CodSpeedHQ/codspeed-rust?branch=cod-2039-issue-with-instrument-hooks-failing-in-codspeed-benchmark#452432db289c71e178b584be91090ae8fa769610"
 dependencies = [
  "clap",
  "codspeed",
@@ -827,8 +825,7 @@ dependencies = [
 [[package]]
 name = "codspeed-criterion-compat-walltime"
 version = "4.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b035c7f9846b143aeabb3833f5b584023eb97b43ecbff3d997db74c4372df2bd"
+source = "git+https://github.com/CodSpeedHQ/codspeed-rust?branch=cod-2039-issue-with-instrument-hooks-failing-in-codspeed-benchmark#452432db289c71e178b584be91090ae8fa769610"
 dependencies = [
  "anes",
  "cast",
@@ -855,8 +852,7 @@ dependencies = [
 [[package]]
 name = "codspeed-divan-compat"
 version = "4.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4179ec5518e79efcd02ed50aa483ff807902e43c85146e87fff58b9cffc06078"
+source = "git+https://github.com/CodSpeedHQ/codspeed-rust?branch=cod-2039-issue-with-instrument-hooks-failing-in-codspeed-benchmark#452432db289c71e178b584be91090ae8fa769610"
 dependencies = [
  "clap",
  "codspeed",
@@ -868,8 +864,7 @@ dependencies = [
 [[package]]
 name = "codspeed-divan-compat-macros"
 version = "4.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "15eaee97aa5bceb32cc683fe25cd6373b7fc48baee5c12471996b58b6ddf0d7c"
+source = "git+https://github.com/CodSpeedHQ/codspeed-rust?branch=cod-2039-issue-with-instrument-hooks-failing-in-codspeed-benchmark#452432db289c71e178b584be91090ae8fa769610"
 dependencies = [
  "divan-macros",
  "itertools 0.14.0",
@@ -882,8 +877,7 @@ dependencies = [
 [[package]]
 name = "codspeed-divan-compat-walltime"
 version = "4.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c38671153aa73be075d6019cab5ab1e6b31d36644067c1ac4cef73bf9723ce33"
+source = "git+https://github.com/CodSpeedHQ/codspeed-rust?branch=cod-2039-issue-with-instrument-hooks-failing-in-codspeed-benchmark#452432db289c71e178b584be91090ae8fa769610"
 dependencies = [
  "cfg-if",
  "clap",
